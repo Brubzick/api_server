@@ -3,6 +3,8 @@ const app = express();
 
 const joi = require('joi');
 
+app.use('/api', express.static(__dirname + '/public'));
+
 //支持跨域访问的中间件
 const cors = require('cors');
 app.use(cors());
@@ -48,6 +50,6 @@ app.use((err, req, res, next) => {
     res.cc(err);
 });
 
-app.listen(4001, () => {
-    console.log('api server running at http://127.0.0.1:4001');
+app.listen(3180, () => {
+    console.log('api server running at http://127.0.0.1:3180');
 })
