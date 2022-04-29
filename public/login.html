@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .w {
+            width: 1500px;
+            margin: auto;
+        }
+        
+        .header {
+            height: 80px;
+            margin: 20px auto;
+            background-color: aqua;
+        }
+        
+        .body {
+            height: 600px;
+            background-color: red;
+        }
+        
+        .form {
+            height: 600px;
+            width: 800px;
+            margin: auto;
+            background-color: aliceblue;
+        }
+        
+        .tail {
+            height: 150px;
+            margin-top: 30px;
+            background-color: aqua;
+        }
+        
+        .content {
+            width: 600px;
+            margin: 30px auto;
+            background-color: aquamarine;
+        }
+        
+        input {
+            height: 22px;
+            width: 300px;
+        }
+        
+        label {
+            display: inline-block;
+            width: 100px;
+            font-size: 20px;
+        }
+        
+        .button {
+            height: 25px;
+            width: 100px;
+            margin-left: 40px;
+            font-size: 16px;
+        }
+        
+        select {
+            height: 25px;
+            width: 100px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w header">
+
+    </div>
+
+    <div class="body w">
+        <div class="form">
+            <form action="http://127.0.0.1/files/login" method="post">
+
+                <div class="content">
+                    <label for="username">用户名：</label> <input type="text" name="username" id="username">
+                </div>
+
+                <div class="content">
+                    <label for="password">密码：</label> <input type="text" name="password" id="password" maxlength="16">
+                </div>
+
+                <div class="content">
+                    <input type="submit" value="submit">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="tail w">
+
+    </div>
+</body>
+
+</html>

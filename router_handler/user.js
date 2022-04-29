@@ -10,7 +10,7 @@ const config = require('../schema/config');
 //注册的处理函数
 exports.register = (req, res) => {
     userinfo = req.body;
-    const sqlStr = 'select * from bwc_users where username=?';
+    const sqlStr = 'select * from users where username=?';
     db.query(sqlStr, userinfo.username, (err, results) => {
         if (err) {
             //res.cc函数封装在app.js中
@@ -22,9 +22,9 @@ exports.register = (req, res) => {
         }
         //用户名可用
         //加密用户密码
-        userinfo.password = userinfo.password = brcypt.hashSync(userinfo.password, 10);
+        userinfo.password = brcypt.hashSync(userinfo.password, 10);
         //插入用户信息
-        const sql = 'insert into bwc_users set ?';
+        const sql = 'insert into users set ?';
         db.query(sql, { username: userinfo.username, password: userinfo.password }, (err, results) => {
             if (err) return res.cc(err);
             if (results.affectedRows !== 1) return res.cc('注册用户失败，请稍候再试！');
@@ -38,7 +38,7 @@ exports.register = (req, res) => {
 exports.login = (req, res) => {
     userinfo = req.body;
     //根据用户名查询用户信息
-    const sqlStr = 'select * from bwc_users where username=?';
+    const sqlStr = 'select * from users where username=?';
     db.query(sqlStr, userinfo.username, (err, results) => {
         if (err) return res.cc(err);
         //获取到的数据条数不等于1
